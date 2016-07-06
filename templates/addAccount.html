@@ -1,0 +1,441 @@
+<html>
+
+<h1 style="display:inline">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	      		Add Your Account
+
+
+
+
+
+
+
+
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div id="pageIntro" class="noprint"></div>
+
+
+
+
+
+
+
+
+
+        </div>
+            <div id="bodycontent">
+
+
+
+
+	<style>
+label.greyoutRadioButton {
+	color: grey;
+}
+</style>
+
+	<form id="offUsAccountCommandV2"  method="post"> {% csrf_token %}
+
+		<p>
+			Enter your account information below.
+		</p>
+
+
+		<div class="formPseudoRow">
+			<div class="labelColumn formlabel">
+
+
+
+
+
+
+
+
+					<label for="accountUse" class="formlabel">
+						Account Use
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<fieldset class="plain">
+					<legend class="hiddenAccessibilityText">
+						Account Use
+					</legend>
+
+
+
+					<table border="0">
+						<tr>
+							<td valign="top"><input id="accountUsePayments" name="accountUse" type="checkbox" value="ACCOUNT_USE_PAYMENTS" checked="checked"/><input type="hidden" name="_accountUse" value="on"/>
+							</td>
+
+							<td><label for="accountUsePayments">
+									<strong>Payments</strong>
+								</label>
+							</td>
+						</tr>
+					</table>
+					<br />
+
+
+
+
+
+
+
+
+
+					<table border="0">
+						<tr>
+							<td valign="top"><input id="accountUseTransfers" name="accountUse" onclick="enableAccountOwnership()" type="checkbox" value="ACCOUNT_USE_TRANSFERS"/><input type="hidden" name="_accountUse" value="on"/>
+							</td>
+							<td><label for="accountUseTransfers">
+									<strong>Transfers</strong>
+								</label><br /> <span class="formCtlHint" style="margin-left: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </span></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+		</div>
+
+
+
+		<div class="formPseudoRow">
+			<div class="labelColumn formlabel">
+
+
+
+
+
+
+
+
+					<label for="accountType" class="formlabel">
+						Account Type
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<fieldset class="plain">
+					<legend class="hiddenAccessibilityText">
+						Account Type
+					</legend>
+
+					<input id="accountType1" name="accountType" type="radio" value="PERSONAL_CHECKING" checked="checked"/>
+					&nbsp;
+					<label for="accountType1">
+						Personal Checking
+					</label>
+					<br />
+
+					<input id="accountType2" name="accountType" type="radio" value="PERSONAL_SAVINGS"/>
+					&nbsp;
+					<label for="accountType2" id="accountTypeLabel2">
+						Personal Savings
+					</label>
+					<br />
+
+					<input id="accountType3" name="accountType" type="radio" value="BUSINESS_CHECKING"/>
+					&nbsp;
+					<label for="accountType3" id="accountTypeLabel3">
+						Business Checking
+					</label>
+					<br />
+
+					<input id="accountType4" name="accountType" type="radio" value="BUSINESS_SAVING"/>
+					&nbsp;
+					<label for="accountType4" id="accountTypeLabel4">
+						Business Savings
+					</label>
+					<br />
+				</fieldset>
+			</div>
+		</div>
+
+
+
+
+		<div class="formPseudoRow" id="ownershipBlock" style="display: none;">
+			<div class="labelColumn formlabel">
+
+
+
+
+
+
+
+
+					<label for="accountOwnership" class="formlabel">
+						Account Ownership
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<fieldset class="plain">
+					<legend class="hiddenAccessibilityText">
+						Account Ownership
+					</legend>
+
+					<input id="accountOwnership1" name="accountOwnership" type="radio" value="I_OWN_THIS_ACCOUNT"/>
+					&nbsp;
+					<label for="accountOwnership1">
+						I acknowledge that I own the non-Wells Fargo account specified below
+					</label>
+					<br />
+					<input id="accountOwnership2" name="accountOwnership" type="radio" value="I_DO_NOT_OWN_THIS_ACCOUNT"/>
+					&nbsp;
+					<label for="accountOwnership2">
+						I do not own the non-Wells Fargo account specified below
+					</label>
+				</fieldset>
+			</div>
+		</div>
+
+
+		<div class="formPseudoRow">
+			<div class="labelColumn">
+
+
+
+
+
+
+
+
+					<label for="accountNumberLabel" class="formlabel">
+						Account Number
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<input id="accountNumber" name="accountNumber" type="text" value="" size="17" maxlength="17" autocomplete="off"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<br />
+			</div>
+
+		</div>
+		<div class="formPseudoRow">
+			<div class="labelColumn">
+
+
+
+
+
+
+
+
+					<label for="reAccountNumberLabel" class="formlabel">
+						Re-enter Account Number
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<input id="reAccountNumber" name="reAccountNumber" type="text" value="" size="17" maxlength="17" autocomplete="off"/>
+				<br />
+			</div>
+		</div>
+
+
+
+
+		<div class="formPseudoRow">
+			<div class="labelColumn">
+
+
+
+
+
+
+
+
+					<label for="rtnLabel" class="formlabel">
+						Routing Number
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<input id="rtn" name="rtn" title="Routing Number" type="text" value="" size="9" maxlength="9" autocomplete="off"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<br />
+			</div>
+		</div>
+		<div class="formPseudoRow">
+			<div class="labelColumn">
+
+
+
+
+
+
+
+
+					<label for="reRtnLabel" class="formlabel">
+						Re-enter Routing Number
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<input id="reRtn" name="reRtn" title="Re-enter Routing Number" type="text" value="" size="9" maxlength="9" autocomplete="off"/>
+				<br />
+			</div>
+		</div>
+
+
+		<div class="formPseudoRow">
+			<div class="labelColumn">
+
+
+
+
+
+
+
+
+					<label for="nicknameLabel" class="formlabel">
+						Create Nickname (optional)
+					</label>
+
+
+			</div>
+			<div class="formCtlColumn">
+				<input id="nickname" name="nickname" title="Nickname" type="text" value="" size="20" maxlength="20" autocomplete="off"/>
+                	<div id="buttonBar" class="noprint">
+			<span id="buttonPrimary"> <input type="submit" name="continue"
+				value="Submit" /> </span> <span
+				id="buttonPeripheral"> <input type="submit" name="cancel"
+				value="Cancel" /> </span>
+			<div class="clearer">&nbsp;</div>
+		</div>
+    </form>
+
+
+</html>

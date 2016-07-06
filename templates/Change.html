@@ -1,0 +1,369 @@
+{% if m.q == 'changeUsername' %}
+
+<!DOCTYPE html>
+<html lang="en" data-device-type="desktop">
+	<head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>PTCeBanking Change Your Username</title>
+	</head>
+
+<div control="timeout" data-cancel-url="/oam/access/timeout?OAM_TKN=b7521b9ef4bf1ece86b97e298fec71728b8efe5931078df575583cb07bc28854">
+    <div control="modal-overlay" id="overlay" class="clickable"></div>
+    <div tabindex="-1" control="modal" id="modal" style='display:none;' role="dialog" aria-labelledby="timeout-header">
+        <h1 id="timeout-header">Continue your session?</h1>
+        <p class="message"></p>
+        <div class='divider'></div>
+        <button tabindex="0" control="button" data-type="primary" id="continueSession">Continue Session</button>
+    </div>
+</div>
+        <div class="content">
+                    <h1>Change Your Username</h1>
+
+                        <span></span>
+                    </div>
+                    <p class="spacer"></p>
+                    <p><strong>Enter your desired username in the field below.</strong></p>
+                    <p>&nbsp;</p>
+
+                    <form id="credentials" name="credentials" method="POST"> {% csrf_token %}
+                        <p control='forms:fieldContainer'>
+                            <label control="forms:label" for="currentUsername">Your current username</label><br>
+                            <span id="currentUsername">{{ m.User_name }}</span>
+                        </p>
+                        <p class="spacer"></p>
+                        <p control='forms:fieldContainer'>
+
+                            <label control="forms:label" for="newUsername">New username</label><br>
+                            <input tabindex="0" type="text" maxlength="14" control="forms:input" id="newUsername" name="newUsername"/>
+                        </p>
+
+                        <hr class="pageDivider">
+                        <div control="buttonContainer">
+                            <input type="hidden" name="action" id="action" value="verify"/>
+                            <input type="hidden" name="isSuggested" id="isSuggested" value="false"/>
+                            <button control="button" data-type="secondary" id="cancel">Cancel</button>
+                            <button control="button" name="Save" data-type="submit" id="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+    <div control='footer'>
+    <ul>
+        <li>
+            <span id="sign_off">
+                <a href="/oam/access/signoffNav?OAM_TKN=1dd81aae3ed9c990e37f24b53966e9806e7beda660060f84561b07e35f721b70">Sign Off</a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+	</body>
+</html>
+{% endif %}
+
+{% if m.q == 'changePassword' %}
+
+<!DOCTYPE html>
+<html lang="en" data-device-type="desktop">
+	<head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>PTCeBanking Change Your Username</title>
+	</head>
+
+<div control="timeout" data-cancel-url="/oam/access/timeout?OAM_TKN=b7521b9ef4bf1ece86b97e298fec71728b8efe5931078df575583cb07bc28854">
+    <div control="modal-overlay" id="overlay" class="clickable"></div>
+    <div tabindex="-1" control="modal" id="modal" style='display:none;' role="dialog" aria-labelledby="timeout-header">
+        <h1 id="timeout-header">Continue your session?</h1>
+        <p class="message"></p>
+        <div class='divider'></div>
+        <button tabindex="0" control="button" data-type="primary" id="continueSession">Continue Session</button>
+    </div>
+</div>
+        <div class="content">
+                    <h1>Change Your Password</h1>
+
+                        <span></span>
+                    </div>
+                    <p class="spacer"></p>
+                    <p><strong>Enter your desired Password in the field below.</strong></p>
+                    <p>&nbsp;</p>
+
+                    <form id="credentials" name="credentials" method="POST"> {% csrf_token %}
+
+                        <p class="spacer"></p>
+                        <p control='forms:fieldContainer'>
+
+                            <label control="forms:label" for="newUsername">New Password</label><br>
+                            <input tabindex="0" type="text" maxlength="14" control="forms:input" id="newPassword" name="newPassword"/>
+                        </p>
+
+                        <hr class="pageDivider">
+                        <div control="buttonContainer">
+                            <input type="hidden" name="action" id="action" value="verify"/>
+                            <input type="hidden" name="isSuggested" id="isSuggested" value="false"/>
+                            <button control="button" data-type="secondary" id="cancel">Cancel</button>
+                            <button control="button" name="Save" data-type="submit" id="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+    <div control='footer'>
+    <ul>
+        <li>
+            <span id="sign_off">
+                <a href="/oam/access/signoffNav?OAM_TKN=1dd81aae3ed9c990e37f24b53966e9806e7beda660060f84561b07e35f721b70">Sign Off</a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+	</body>
+</html>
+{% endif %}
+
+{% if m.q == 'addAuthUser' %}
+
+<!DOCTYPE html>
+<html lang="en" data-device-type="desktop">
+	<head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>PTCeBanking Add Authorized Users</title>
+	</head>
+
+<div control="timeout" data-cancel-url="/oam/access/timeout?OAM_TKN=b7521b9ef4bf1ece86b97e298fec71728b8efe5931078df575583cb07bc28854">
+    <div control="modal-overlay" id="overlay" class="clickable"></div>
+    <div tabindex="-1" control="modal" id="modal" style='display:none;' role="dialog" aria-labelledby="timeout-header">
+        <h1 id="timeout-header">Continue your session?</h1>
+        <p class="message"></p>
+        <div class='divider'></div>
+        <button tabindex="0" control="button" data-type="primary" id="continueSession">Continue Session</button>
+    </div>
+</div>
+        <div class="content">
+                    <h1>Add Authorized User</h1>
+
+                        <span></span>
+                    </div>
+                    <p class="spacer"></p>
+                    <p><strong>Enter your desired authorized user</strong></p>
+                    <p>&nbsp;</p>
+
+                    <form id="credentials" name="credentials" method="POST"> {% csrf_token %}
+                        <p control='forms:fieldContainer'>
+                            <label control="forms:label" for="currentUsername">Current Authorized users</label><br>
+                            <span id="currentUsername">{{ m.First_name }} {{ m.Last_name }}</span>
+                        </p>
+                        <p class="spacer"></p>
+                        <p control='forms:fieldContainer'>
+
+                            <label control="forms:label" for="newUsername">New authorized user</label><br>
+                            <input tabindex="0" type="text" maxlength="14" control="forms:input" id="newAuthUser" name="newAuthUser"/>
+                        </p>
+
+                        <hr class="pageDivider">
+                        <div control="buttonContainer">
+                            <input type="hidden" name="action" id="action" value="verify"/>
+                            <input type="hidden" name="isSuggested" id="isSuggested" value="false"/>
+                            <button control="button" data-type="secondary" id="cancel">Cancel</button>
+                            <button control="button" name="Save" data-type="submit" id="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+    <div control='footer'>
+    <ul>
+        <li>
+            <span id="sign_off">
+                <a href="/oam/access/signoffNav?OAM_TKN=1dd81aae3ed9c990e37f24b53966e9806e7beda660060f84561b07e35f721b70">Sign Off</a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+	</body>
+</html>
+{% endif %}
+
+{% if m.q == 'paperlessEnrollment' %}
+
+<!DOCTYPE html>
+<html lang="en" data-device-type="desktop">
+	<head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>PTCeBanking Paperless Enrollment</title>
+	</head>
+
+<div control="timeout" data-cancel-url="/oam/access/timeout?OAM_TKN=b7521b9ef4bf1ece86b97e298fec71728b8efe5931078df575583cb07bc28854">
+    <div control="modal-overlay" id="overlay" class="clickable"></div>
+    <div tabindex="-1" control="modal" id="modal" style='display:none;' role="dialog" aria-labelledby="timeout-header">
+        <h1 id="timeout-header">Continue your session?</h1>
+        <p class="message"></p>
+        <div class='divider'></div>
+        <button tabindex="0" control="button" data-type="primary" id="continueSession">Continue Session</button>
+    </div>
+</div>
+        <div class="content">
+                    <h1>Paperless</h1>
+
+                        <span></span>
+                    </div>
+                    <p class="spacer"></p>
+                    <p><strong>Sign up for a paperless plan</strong></p>
+                    <p>&nbsp;</p>
+
+                    <form id="credentials" name="credentials" method="POST"> {% csrf_token %}
+
+                        <p class="spacer"></p>
+                        <p control='forms:fieldContainer'>
+
+                            <input tabindex="0" type="text" maxlength="14" control="forms:input" value={{m.billchange}} id="newBilling" name="newBilling"/>
+                        </p>
+
+                        <hr class="pageDivider">
+                        <div control="buttonContainer">
+                            <input type="hidden" name="action" id="action" value="verify"/>
+                            <input type="hidden" name="isSuggested" id="isSuggested" value="false"/>
+                            <button control="button" data-type="secondary" id="cancel">Cancel</button>
+                            <button control="button" name="Save" data-type="submit" id="save">Save</button>
+                        </div>
+                    </form>
+                </div>
+    <div control='footer'>
+    <ul>
+        <li>
+            <span id="sign_off">
+                <a href="/oam/access/signoffNav?OAM_TKN=1dd81aae3ed9c990e37f24b53966e9806e7beda660060f84561b07e35f721b70">Sign Off</a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+	</body>
+</html>
+{% endif %}
+
+{% if m.q == 'updateContactInfo' %}
+
+<!DOCTYPE html>
+<html lang="en" data-device-type="desktop">
+	<head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>PTCeBanking Update Your Contact Information</title>
+	</head>
+
+<div control="timeout" data-cancel-url="/oam/access/timeout?OAM_TKN=b7521b9ef4bf1ece86b97e298fec71728b8efe5931078df575583cb07bc28854">
+    <div control="modal-overlay" id="overlay" class="clickable"></div>
+    <div tabindex="-1" control="modal" id="modal" style='display:none;' role="dialog" aria-labelledby="timeout-header">
+        <h1 id="timeout-header">Continue your session?</h1>
+        <p class="message"></p>
+        <div class='divider'></div>
+        <button tabindex="0" control="button" data-type="primary" id="continueSession">Continue Session</button>
+    </div>
+</div>
+        <div class="content">
+                    <h1>Change Your Address</h1>
+
+                        <span></span>
+                    </div>
+                    <p class="spacer"></p>
+                    <p><strong>Enter your new address in the field below.</strong></p>
+                    <p>&nbsp;</p>
+
+                    <form id="credentials" name="credentials" method="POST"> {% csrf_token %}
+                        <p control='forms:fieldContainer'>
+                            <label control="forms:label" for="currentUsername">Your current address</label><br>
+                            <span id="currentUsername">{{ m.Adress }}</span>
+                        </p>
+                        <p class="spacer"></p>
+                        <p control='forms:fieldContainer'>
+
+                            <label control="forms:label" for="newUsername">New Address</label><br>
+                            <input tabindex="0" type="text"  name="newAddress"/>
+                        </p>
+
+                        <hr class="pageDivider">
+                        <div control="buttonContainer">
+                            <input type="hidden" name="action" id="action" value="verify"/>
+                            <input type="hidden" name="isSuggested" id="isSuggested" value="false"/>
+
+                            <h1>Change Your Phone Number</h1>
+
+                        <span></span>
+                    </div>
+                    <p class="spacer"></p>
+                    <p><strong>Enter your new phone number in the field below.</strong></p>
+                    <p>&nbsp;</p>
+
+                    <form id="credentials" name="credentials" method="POST"> {% csrf_token %}
+                        <p control='forms:fieldContainer'>
+                            <label control="forms:label" for="currentUsername">Your phone number</label><br>
+                            <span id="currentUsername">{{ m.Phone }}</span>
+                        </p>
+                        <p class="spacer"></p>
+                        <p control='forms:fieldContainer'>
+
+                            <label control="forms:label" for="newUsername">New Phone number</label><br>
+                            <input tabindex="0" type="text"  name="newPhone"/>
+                        </p>
+
+                        <hr class="pageDivider">
+                        <div control="buttonContainer">
+                            <input type="hidden" name="action" id="action" value="verify"/>
+                            <input type="hidden" name="isSuggested" id="isSuggested" value="false"/>
+                        </div>
+
+                        <h1>Change Your Email</h1>
+
+                        <span></span>
+                    </div>
+                    <p class="spacer"></p>
+                    <p><strong>Enter your new Email in the field below.</strong></p>
+                    <p>&nbsp;</p>
+
+                    <form id="credentials" name="credentials" method="POST"> {% csrf_token %}
+                        <p control='forms:fieldContainer'>
+                            <label control="forms:label" for="currentUsername">Your current Email</label><br>
+                            <span id="currentUsername">{{ m.Email }}</span>
+                        </p>
+                        <p class="spacer"></p>
+                        <p control='forms:fieldContainer'>
+
+                            <label control="forms:label" for="newUsername">New Email</label><br>
+                            <input tabindex="0" type="text"  name="newEmail"/>
+                        </p>
+
+                        <hr class="pageDivider">
+                        <div control="buttonContainer">
+                            <input type="hidden" name="action" id="action" value="verify"/>
+                            <input type="hidden" name="isSuggested" id="isSuggested" value="false"/>
+                            <button control="button" data-type="secondary" id="cancel">Cancel</button>
+                            <button control="button" name="Save" data-type="submit" id="save">Save</button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+    <div control='footer'>
+    <ul>
+        <li>
+            <span id="sign_off">
+                <a href="/oam/access/signoffNav?OAM_TKN=1dd81aae3ed9c990e37f24b53966e9806e7beda660060f84561b07e35f721b70">Sign Off</a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+	</body>
+</html>
+{% endif %}
